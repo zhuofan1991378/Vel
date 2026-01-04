@@ -1,0 +1,130 @@
+/* الخطوط والخلفية */
+body {
+  font-family: "Cairo", sans-serif;
+  background: linear-gradient(135deg, #2196f3, #0d47a1);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* البطاقة */
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  width: 320px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  animation: fadeSlide 1s ease forwards, floatCard 6s ease-in-out infinite;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatCard {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* الشعار */
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  animation: spin 20s linear infinite, pulse 3s ease-in-out infinite;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* الحقول */
+.field {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transition: 0.3s;
+}
+
+input:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 12px #2196f3;
+}
+
+/* زر مع تأثير الماء */
+.btn {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2196f3, #0d47a1);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn:active::after {
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.4);
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(20); opacity: 0; }
+}
+
+/* النصوص */
+.status {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #bbdefb;
+}
