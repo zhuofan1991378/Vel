@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Velkor | تسجيل الدخول</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="https://i.supaimg.com/0acfe8d6-a4df-4f25-8d5b-c4d63c00bb2f.jpg" alt="Velkor Logo">
+    </div>
+    <h2>تسجيل الدخول</h2>
+
+    <div class="field">
+      <label>البريد الإلكتروني</label>
+      <input type="email" id="loginEmail">
+    </div>
+    <div class="field">
+      <label>كلمة المرور</label>
+      <input type="password" id="loginPassword">
+    </div>
+
+    <button class="btn" onclick="login()">تسجيل الدخول</button>
+
+    <p>ليس لديك حساب؟ <a href="signup.html">إنشاء حساب</a></p>
+
+    <div class="status" id="loginStatus"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
